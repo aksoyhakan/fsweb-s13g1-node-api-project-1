@@ -22,13 +22,13 @@ Node.js ve Express i kullanarak kullanıcılar üzerinde CRUD işlemleri çalı�
 
 Bir Web API oluşturmak ve aşağıdaki _uçnoktaları_ uygulamak için "index.js" ve "api/server.js" içinde gerekli kodu ekleyin:
 
-| Metod  | URL            | Açıklama                                                                                               |
-| ------ | -------------- | ------------------------------------------------------------------------------------------------------ |
-| POST   | /api/users     | "İstek gövdesi" (request body) içinde gönderilen bilgileri kullanarak bir kullanıcı oluşturur.         |
-| GET    | /api/users     | Kullanıcılar dizisini döndürür.                                                                        |
-| GET    | /api/users/:id | Belirtilen "id" ile kullanıcı nesnesini döndürür.                                                      |
-| DELETE | /api/users/:id | Belirtilen "id" ile kullanıcıyı kaldırır ve silinen kullanıcıyı döndürür.                              |
-| PUT    | /api/users/:id | "İstek gövdesi"nden alınan verileri kullanarak belirtilen "id" ile günceller. Güncel nesneyi döndürür  |
+| Metod  | URL            | Açıklama                                                                                              |
+| ------ | -------------- | ----------------------------------------------------------------------------------------------------- |
+| POST   | /api/users     | "İstek gövdesi" (request body) içinde gönderilen bilgileri kullanarak bir kullanıcı oluşturur.        |
+| GET    | /api/users     | Kullanıcılar dizisini döndürür.                                                                       |
+| GET    | /api/users/:id | Belirtilen "id" ile kullanıcı nesnesini döndürür.                                                     |
+| DELETE | /api/users/:id | Belirtilen "id" ile kullanıcıyı kaldırır ve silinen kullanıcıyı döndürür.                             |
+| PUT    | /api/users/:id | "İstek gövdesi"nden alınan verileri kullanarak belirtilen "id" ile günceller. Güncel nesneyi döndürür |
 
 #### Kullanıcı Şeması
 
@@ -56,7 +56,7 @@ Bunları `api/users/model.js` içinde bulabilirsiniz. Tüm bu fonksiyonlar birer
 
 İstemci `/api/users` e `POST` isteği atarsa:
 
-- Request bodyde `name` ya da  `bio` eksikse:
+- Request bodyde `name` ya da `bio` eksikse:
 
   - HTTP `400` durum kodu (Bad Request).
   - şu JSON'u cevapta döndürür: `{ message: "Lütfen kullanıcı için bir name ve bio sağlayın" }`.
@@ -77,7 +77,7 @@ Bunları `api/users/model.js` içinde bulabilirsiniz. Tüm bu fonksiyonlar birer
   - HTTP `500` kodu yanıtlar.
   - Şu JSON'u döndürür: `{ message: "Kullanıcı bilgileri alınamadı" }`.
 
-İstemci `/api/users/:id` 'e  `GET` isteği yaparsa :
+İstemci `/api/users/:id` 'e `GET` isteği yaparsa :
 
 - Eğer _user_ belirtilen `id` mevcut değilse:
 
@@ -99,14 +99,14 @@ Bunları `api/users/model.js` içinde bulabilirsiniz. Tüm bu fonksiyonlar birer
   - HTTP `500` yanıtlar.
   - şu JSON'u döndürür: `{ message: "Kullanıcı silinemedi" }`.
 
-İstemci `/api/users/:id` 'e  `PUT` isteği atarsa :
+İstemci `/api/users/:id` 'e `PUT` isteği atarsa :
 
 - Belirtilen `id` li _user_ yoksa:
 
   - HTTP `404` (Not Found).
   - şu JSON'u döndürür: `{ message: "Belirtilen ID'li kullanıcı bulunamadı" }`.
 
-- Request bodysinde  `name` ya da `bio` yoksa:
+- Request bodysinde `name` ya da `bio` yoksa:
 
   - HTTP `400` (Bad Request).
   - şu JSON'u döndürür: `{ message: "Lütfen kullanıcı için name ve bio sağlayın" }`.
@@ -124,7 +124,7 @@ Bunları `api/users/model.js` içinde bulabilirsiniz. Tüm bu fonksiyonlar birer
 
 #### Önemli Notlar
 
-- Oluşturduğunuz uç noktaları Postman ya da HTTPie ile test edin.  Otomatik testleri çalıştırmak için `npm test`.
+- Oluşturduğunuz uç noktaları Postman ya da HTTPie ile test edin. Otomatik testleri çalıştırmak için `npm test`.
 - Ek dosyalar oluşturabilirsiniz ancak **mevcut dosyaları veya klasörleri taşımayın veya yeniden adlandırmayın**.
 - Ek kitaplıklar yüklemek veya ek komut dosyaları eklemek dışında `package.json` dosyanızı değiştirmeyin. **Mevcut kütüphaneleri güncellemeyin**.
 - Uygulamanızda en iyi yöntemleri izlemeniz ve temiz ve profesyonel kodlar yazmanız önemlidir.
